@@ -148,10 +148,14 @@ p:first-child {
 *******************************/
 .body-flex {
   display: flex;
-  flex-flow: column wrap;
+  min-height: 100vh;
+  flex-direction: column;
 }
 .body-flex > * {
   width: 100%;
+}
+.body-flex .site-content {
+  flex: 1;
 }
 
 .grid {
@@ -338,7 +342,7 @@ section {
   padding: 40px 0;
 }
 section .wrapper {
-  overflow: visible;
+  flex-direction: column;
 }
 section h2 {
   font-size: 40px;
@@ -393,8 +397,8 @@ section .section-desc {
   color: #fff;
   font-size: 10px;
   letter-spacing: 1px;
-  width: 100%;
-  max-width: 200px;
+  text-align: right;
+  margin: 20px 0 0;
 }
 
 .hide-copy {
@@ -569,6 +573,15 @@ section .section-desc {
   text-align: center;
 }
 
+.photography .section-content {
+  align-items: center;
+}
+.photography blockquote .copy {
+  font-size: 50px;
+  font-style: italic;
+  display: inline-block;
+}
+
 /*******************************
 
   Footer Styles
@@ -580,6 +593,53 @@ section .section-desc {
   color: #fff;
   margin: 100px 0 0;
 }
+.site-footer .wrapper {
+  flex-direction: column;
+}
+.site-footer .wrapper > * {
+  width: 100%;
+}
+.site-footer .icon {
+  font: 30px fontawesome, sans-serif;
+  margin: 10px;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+  color: #786e77;
+  fill: #786e77;
+  display: inline-block;
+}
+.site-footer .icon:first-child {
+  margin-left: 0;
+}
+.site-footer .social-item {
+  width: 100%;
+  max-width: 50px;
+  height: 40px;
+  display: inline-block;
+}
+.site-footer .social-item a {
+  display: block;
+  position: relative;
+}
+.site-footer .social-item svg.icon {
+  height: 30px;
+  width: auto;
+  fill: #b9a389;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.site-footer .logo {
+  flex: 0.2;
+}
+
 .loader-wrapper {
   position: fixed;
   width: 100%;

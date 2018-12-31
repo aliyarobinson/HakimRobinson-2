@@ -75,13 +75,18 @@
 *******************************/
 
 .body-flex {
-    display: flex;
-    flex-flow: column wrap;
-  
-    > * {
-      width: 100%;
-    }
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+
+  > * {
+    width: 100%;
   }
+
+  .site-content {
+    flex: 1;
+  }
+}
   
   .grid {
     display: flex;

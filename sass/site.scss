@@ -88,7 +88,7 @@ section {
   padding: 40px 0;
 
   .wrapper {
-    overflow: visible;
+    flex-direction: column;
   }
 
   h2 {
@@ -151,8 +151,8 @@ section {
   color: #fff;
   font-size: 10px;
   letter-spacing: 1px;
-  width: 100%;
-  max-width: 200px;
+  text-align: right;
+  margin: 20px 0 0;
 }
 
 .hide-copy {
@@ -360,6 +360,20 @@ section {
   }
 }
 
+.photography {
+
+  .section-content {
+    align-items: center;
+  }
+  blockquote {
+    .copy {
+      font-size: 50px;
+      font-style: italic;
+      display: inline-block;
+    }
+  }
+}
+
 /*******************************
 
   Footer Styles
@@ -371,8 +385,60 @@ section {
   color: #fff;
   margin: 100px 0 0;
 
-  .block.logo {
-    // float: right;
+  .wrapper{
+    flex-direction: column;
+
+    > * {
+      width: 100%;
+    }
+  }
+
+  .icon {
+    font: 30px fontawesome,sans-serif;
+    margin: 10px;
+    -webkit-transition: .4s;
+    -moz-transition: .4s;
+    -ms-transition: .4s;
+    -o-transition: .4s;
+    transition: .4s;
+    color: #786e77;
+    fill: #786e77;
+    display: inline-block;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  .social-item {
+    width: 100%;
+    max-width: 50px;
+    height: 40px;
+    display: inline-block;
+
+    a {
+      display: block;
+      position: relative;
+    }
+
+    svg.icon {
+      height: 30px;
+      width: auto;
+      fill: $tan;
+      position: absolute;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+      transform: translateX(-50%);
+    }
+  }
+
+  .logo {
+    flex: 0.2;
+    // height: 100px;
+    // width: 200px; 
   }
 }
 
