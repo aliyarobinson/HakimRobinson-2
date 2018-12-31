@@ -25,11 +25,11 @@ html {
 body {
   font: 100 normal 16px 'open sans', arial, sans-serif;
   color: $font-color;
-  transition: 500ms;
-  
-  &.in-transition {
-    transition: transform 900ms ease;
+
+  * {
+    transition: 500ms;
   }
+
 }
 
 *,
@@ -55,6 +55,10 @@ a {
   color: inherit;
   text-decoration: none;
 
+  &:hover {
+    color: $tan-alpha;
+  }
+
   &.cta {
     width: 33.3%;
     max-width: 300px;
@@ -64,8 +68,23 @@ a {
     text-align: center;
     margin: 40px auto;
     display: block;
+
+    &:hover{
+      background: $tan-alpha;
+      color: initial;
+    }
+
+    &.dark {
+      background: $tan-alpha;
+
+      &:hover{
+        background: transparent;
+      }
+    }
   }
 }
+
+
 
 button {
   border: none;
@@ -205,7 +224,7 @@ section {
 
 *******************************/
 .site-header {
-  padding: 20px 0 0;
+  padding: 20px 0;
   width: 100%;
   position: fixed;
   z-index: 5;
@@ -229,51 +248,59 @@ section {
       height: 100%;
     }
   }
-}
 
+  .site-nav {
+    opacity: 0.9;
 
-/*******************************
+    ul {
+      display: flex;
+      justify-content: space-between;
+    }
+  
+    li {
+      margin: 0 0 0 10px;
+  
+      a {
+        font-size: 18px;
+        color: #fff;
+        // display: inline-block;
+        letter-spacing: 0.6px;
+      }
+    }
+  } 
 
-  Nav Styles
+  &.small {
+    height: 60px;
+    background: rgba(255,255,255, 0.95);
+    margin: 0;
+    padding: 5px 0;
+    color: $font-color;
 
-*******************************/
+    .site-nav {
+      line-height: 60px;
+      margin-top: -30px;
+    }
+    
+      a {
+        color: $font-color;
 
-.site-nav ul {
-  display: flex;
-  justify-content: space-between;
-}
-  .site-nav li {
-  // float: left;
-  // margin: 0 0 0 20px;
-  // position: relative;
-  // padding: 5px 0;
-}
+        &:hover {
+          color: $tan-alpha;
+        }
+      }
+  
+      svg {
 
-.site-nav li:first-child {
-  // margin: 0;
-}
+        max-height: 48px;
 
-.site-nav li a {
-  font-size: 18px;
-  color: #fff;
-  // display: inline-block;
-  letter-spacing: 0.6px;
-}
-
-.site-header.small {
-  height: 90px;
-  background: rgba(255,255,255, 0.8);
-  padding: 0;
-  margin: 0;
-  border: 1px rgba(137, 124, 141, 0.5);
-  border-style: none none solid;
-
-}
-
-.site-header.mobile-active .site-nav ul {
-  position: relative;
-  top: 50%;
-  float: none;
+        rect,
+        polygon,
+        path {
+          fill: $font-color;
+        }
+      }
+  }
+  
 }
 
 
@@ -390,7 +417,10 @@ section {
 
     > * {
       width: 100%;
+      opacity: 0.9;
     }
+
+    
   }
 
   .icon {
@@ -482,7 +512,7 @@ section {
 
 @media only screen and (min-device-width: 768px) and (max-device-width:1024px) and (-webkit-min-device-pixel-ratio:1),(max-width:768px) {
   .hero {
-    // height: 300px;
+    height: 300px;
 
     svg {
       display: none;
@@ -491,22 +521,54 @@ section {
 }
 
 @media screen and (max-width: 650px) {
+  section {
+    .section-desc {
+      padding: 0;
+    }
+  }
   .hero {
-    // height: 160px;
+    height: 160px;
   }
 
-  .block-1-wide,
-  .block-2-wide,
-  .block-3-wide,
-  .block-4-wide {
-    // width: 100%;
-    // max-width: none;
-    // text-align: center;
+  .grid {
+    flex-direction: column;
+  }
+
+  .about {
+    .icon-bar > * {
+      max-width: none;
+    }
+  }
+
+  .site-footer {
+
+    .footer-top {
+       .links {
+        width: 80%;
+        text-align: center;
+        margin: 0 auto 20px;
+        border: rgba(255,255,255,0.8) 1px solid;
+        padding: 0 0 20px;
+        border-style: none none solid;
+       }
+    }
+    .logo {
+      width: 100%;
+
+      svg {
+        max-height: 100px;
+      }
+    }
+  }
+
+  .legal {
+    text-align: center;
   }
 
 }
 @media screen and (max-width: 500px) {
 
+  
 }
 
 

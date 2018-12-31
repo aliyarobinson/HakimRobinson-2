@@ -282,10 +282,9 @@ html {
 body {
   font: 100 normal 16px "open sans", arial, sans-serif;
   color: #383838;
-  transition: 500ms;
 }
-body.in-transition {
-  transition: transform 900ms ease;
+body * {
+  transition: 500ms;
 }
 
 *,
@@ -311,6 +310,9 @@ a {
   color: inherit;
   text-decoration: none;
 }
+a:hover {
+  color: rgba(185, 163, 137, 0.6);
+}
 a.cta {
   width: 33.3%;
   max-width: 300px;
@@ -320,6 +322,16 @@ a.cta {
   text-align: center;
   margin: 40px auto;
   display: block;
+}
+a.cta:hover {
+  background: rgba(185, 163, 137, 0.6);
+  color: initial;
+}
+a.cta.dark {
+  background: rgba(185, 163, 137, 0.6);
+}
+a.cta.dark:hover {
+  background: transparent;
 }
 
 button {
@@ -447,7 +459,7 @@ section .section-desc {
 
 *******************************/
 .site-header {
-  padding: 20px 0 0;
+  padding: 20px 0;
   width: 100%;
   position: fixed;
   z-index: 5;
@@ -469,36 +481,45 @@ section .section-desc {
 .site-header .logo svg {
   height: 100%;
 }
-
-/*******************************
-
-  Nav Styles
-
-*******************************/
-.site-nav ul {
+.site-header .site-nav {
+  opacity: 0.9;
+}
+.site-header .site-nav ul {
   display: flex;
   justify-content: space-between;
 }
-
-.site-nav li a {
+.site-header .site-nav li {
+  margin: 0 0 0 10px;
+}
+.site-header .site-nav li a {
   font-size: 18px;
   color: #fff;
   letter-spacing: 0.6px;
 }
-
 .site-header.small {
-  height: 90px;
-  background: rgba(255, 255, 255, 0.8);
-  padding: 0;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.95);
   margin: 0;
-  border: 1px rgba(137, 124, 141, 0.5);
-  border-style: none none solid;
+  padding: 5px 0;
+  color: #383838;
 }
-
-.site-header.mobile-active .site-nav ul {
-  position: relative;
-  top: 50%;
-  float: none;
+.site-header.small .site-nav {
+  line-height: 60px;
+  margin-top: -30px;
+}
+.site-header.small a {
+  color: #383838;
+}
+.site-header.small a:hover {
+  color: rgba(185, 163, 137, 0.6);
+}
+.site-header.small svg {
+  max-height: 48px;
+}
+.site-header.small svg rect,
+.site-header.small svg polygon,
+.site-header.small svg path {
+  fill: #383838;
 }
 
 /*******************************
@@ -540,7 +561,7 @@ section .section-desc {
 }
 .latest .video-mod button.play-button {
   border: 10px solid #b9a389;
-  background: rgba(163, 163, 137, 0.6);
+  background: rgba(185, 163, 137, 0.6);
   width: 50%;
   max-width: 200px;
   height: 200px;
@@ -598,6 +619,7 @@ section .section-desc {
 }
 .site-footer .wrapper > * {
   width: 100%;
+  opacity: 0.9;
 }
 .site-footer .icon {
   font: 30px fontawesome, sans-serif;
@@ -670,8 +692,47 @@ section .section-desc {
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1), (max-width: 768px) {
+  .hero {
+    height: 300px;
+  }
   .hero svg {
     display: none;
+  }
+}
+@media screen and (max-width: 650px) {
+  section .section-desc {
+    padding: 0;
+  }
+
+  .hero {
+    height: 160px;
+  }
+
+  .grid {
+    flex-direction: column;
+  }
+
+  .about .icon-bar > * {
+    max-width: none;
+  }
+
+  .site-footer .footer-top .links {
+    width: 80%;
+    text-align: center;
+    margin: 0 auto 20px;
+    border: rgba(255, 255, 255, 0.8) 1px solid;
+    padding: 0 0 20px;
+    border-style: none none solid;
+  }
+  .site-footer .logo {
+    width: 100%;
+  }
+  .site-footer .logo svg {
+    max-height: 100px;
+  }
+
+  .legal {
+    text-align: center;
   }
 }
 
