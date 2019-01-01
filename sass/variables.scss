@@ -6,6 +6,7 @@ $h1-size: $font-size * 2; // all other fonts are related to $font-size.
 // Text Color
 $font-color-dark: #252525;
 $font-color: #383838;
+$font-color-alpha: rgba(56,56,56,0.95);
 $font-color-light: #999999;
 
 // Form Background Color
@@ -14,6 +15,7 @@ $body-bg-color: #fff;
 //Colors
 $tan: #b9a389;
 $tan-alpha:rgba(185,163,137, 0.6);
+$tan-alpha-2:rgba(185,163,137, 0.95);
 ///////////////////
 
 //Color of Selected Objects
