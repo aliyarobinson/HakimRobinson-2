@@ -516,6 +516,11 @@ section .section-desc {
 .site-header .logo svg {
   height: 100%;
 }
+.site-header .logo:hover svg polygon,
+.site-header .logo:hover svg rect,
+.site-header .logo:hover svg path {
+  fill: #383838;
+}
 .site-header .site-nav {
   opacity: 0.9;
 }
@@ -525,14 +530,18 @@ section .section-desc {
 }
 .site-header .site-nav li {
   margin: 0 0 0 10px;
+  transform: skew(-20deg);
 }
 .site-header .site-nav li a {
   font-size: 18px;
   color: #fff;
   letter-spacing: 0.6px;
+  transform: skew(20deg);
+  display: inline-block;
+  padding: 5px 10px;
 }
-.site-header .site-nav li a:hover {
-  color: rgba(185, 163, 137, 0.6);
+.site-header .site-nav li:hover, .site-header .site-nav li:active {
+  background: rgba(185, 163, 137, 0.6);
 }
 .site-header.small {
   height: 80px;
@@ -618,18 +627,47 @@ section .section-desc {
   margin: 60px 0 0;
 }
 .about .icon-bar > * {
-  border: 1px solid #383838;
   max-width: 300px;
   padding: 20px 20px 10px;
   position: relative;
   width: 30%;
   margin: 0 0 0 3%;
-  border-style: none solid solid;
+}
+.about .icon-bar > *:first-child {
+  margin: 0;
+}
+.about .icon-bar > *:after {
+  content: "";
+  width: 20%;
+  height: 1px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: -moz-linear-gradient(left, rgba(56, 56, 56, 0) 0%, #383838 99%, #383838 100%);
+  background: -webkit-linear-gradient(left, rgba(56, 56, 56, 0) 0%, #383838 99%, #383838 100%);
+  background: linear-gradient(to right, rgba(56, 56, 56, 0) 0%, #383838 99%, #383838 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#00383838", endColorstr="#383838",GradientType=1 );
+}
+.about .icon-bar > *:before {
+  content: "";
+  width: 20%;
+  height: 1px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: -moz-linear-gradient(left, #383838 0%, rgba(56, 56, 56, 0) 100%);
+  background: -webkit-linear-gradient(left, #383838 0%, rgba(56, 56, 56, 0) 100%);
+  background: linear-gradient(to right, #383838 0%, rgba(56, 56, 56, 0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#383838", endColorstr="#00383838",GradientType=1 );
 }
 .about .icon-bar > * .title {
   text-align: center;
   margin: 30px 0 0;
   font-weight: 700;
+}
+.about .icon-bar > * .desc {
+  font-size: 14px;
+  line-height: 18px;
 }
 .about .icon-bar .cell-icon {
   width: 60px;
@@ -790,9 +828,6 @@ section .section-desc {
     flex-direction: column;
   }
 
-  .about .icon-bar {
-    margin: 0;
-  }
   .about .icon-bar > * {
     max-width: none;
     width: 100%;

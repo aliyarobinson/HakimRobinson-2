@@ -287,6 +287,18 @@ section {
     svg {
       height: 100%;
     }
+
+    &:hover {
+
+      svg {
+
+        polygon, 
+        rect,
+        path {
+          fill: $font-color;
+        }
+      }
+    }
   }
 
   .site-nav {
@@ -299,16 +311,21 @@ section {
   
     li {
       margin: 0 0 0 10px;
+      transform: skew(-20deg);
   
       a {
         font-size: 18px;
         color: #fff;
         // display: inline-block;
         letter-spacing: 0.6px;
+        transform: skew(20deg);
+        display: inline-block;
+        padding: 5px 10px;
+      }
 
-        &:hover {
-          color: $tan-alpha;
-        }
+      &:hover,
+      &:active {
+        background: $tan-alpha;
       }
     }
   } 
@@ -412,18 +429,53 @@ section {
     margin: 60px 0 0;
 
     > * {
-      border: 1px solid $font-color;
+      // border: 1px solid $font-color;
       max-width: 300px;
       padding: 20px 20px 10px;
       position: relative;
       width: 30%;
       margin: 0 0 0 3%;
-      border-style: none solid solid;
+      // border-style: none solid solid;
+
+      &:first-child {
+        margin: 0;
+      }
+
+      &:after {
+        content: "";
+        width: 20%;
+        height: 1px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: -moz-linear-gradient(left, rgba(56,56,56,0) 0%, rgba(56,56,56,1) 99%, rgba(56,56,56,1) 100%);
+        background: -webkit-linear-gradient(left, rgba(56,56,56,0) 0%,rgba(56,56,56,1) 99%,rgba(56,56,56,1) 100%);
+        background: linear-gradient(to right, rgba(56,56,56,0) 0%,rgba(56,56,56,1) 99%,rgba(56,56,56,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00383838', endColorstr='#383838',GradientType=1 );
+      }
+
+      &:before {
+        content: "";
+        width: 20%;
+        height: 1px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: -moz-linear-gradient(left, rgba(56,56,56,1) 0%, rgba(56,56,56,0) 100%);
+        background: -webkit-linear-gradient(left, rgba(56,56,56,1) 0%,rgba(56,56,56,0) 100%);
+        background: linear-gradient(to right, rgba(56,56,56,1) 0%,rgba(56,56,56,0) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#383838', endColorstr='#00383838',GradientType=1 );
+      }
 
       .title {
         text-align: center;
         margin: 30px 0 0;
         font-weight: 700;
+      }
+
+      .desc {
+        font-size: 14px;
+        line-height: 18px;
       }
     }
 
@@ -629,7 +681,7 @@ section {
   .about {
     .icon-bar {
 
-      margin: 0;
+      // margin: 0;
 
       > * {
         max-width: none;
