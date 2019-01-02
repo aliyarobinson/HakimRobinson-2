@@ -15,9 +15,37 @@
 h1, h2, h3, h4, h5, h6 {
 }
 
+
 h1, h2 {
   font-size: 50px;
   font-family: 'tulpen', arial, sans-serif;
+}
+
+h1 {
+  position: absolute;
+  bottom: 20%;
+  left: 10%;
+  // font-size: 60px;
+  font-size: 100px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+  // line-height: 38px;
+  line-height: 60px;
+
+  span {
+    display: block;
+    // font-size: 30px;
+    // letter-spacing: 16px;
+    font-size: 44px;
+    letter-spacing: 32px;
+  }
+}
+
+
+h3 {
+  font-size: 20px;
+  font-weight: 400;
 }
 
 strong {
@@ -31,6 +59,7 @@ p {
   line-height: 22px;
   letter-spacing: 0.26px;
   font-size: $font-size;
+  text-align: left;
 }
 
 p:first-child {

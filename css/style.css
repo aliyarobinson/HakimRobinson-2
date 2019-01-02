@@ -105,6 +105,27 @@ h1, h2 {
   font-family: "tulpen", arial, sans-serif;
 }
 
+h1 {
+  position: absolute;
+  bottom: 20%;
+  left: 10%;
+  font-size: 100px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 60px;
+}
+h1 span {
+  display: block;
+  font-size: 44px;
+  letter-spacing: 32px;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 400;
+}
+
 strong {
   font-weight: bold;
   font-size: 22px;
@@ -116,6 +137,7 @@ p {
   line-height: 22px;
   letter-spacing: 0.26px;
   font-size: 16px;
+  text-align: left;
 }
 
 p:first-child {
@@ -334,6 +356,12 @@ a.cta.dark:hover {
   background: transparent;
 }
 
+p img.fr {
+  width: 40%;
+  float: right;
+  padding: 10px 0 10px 10px;
+}
+
 button {
   border: none;
   padding: 0;
@@ -414,6 +442,13 @@ section .section-desc {
   padding: 0 0 0 150px;
 }
 
+.img-wrapper {
+  width: 100%;
+  position: relative;
+  padding-bottom: 40%;
+  overflow: hidden;
+}
+
 .resp-img {
   position: absolute;
   top: 50%;
@@ -427,6 +462,35 @@ section .section-desc {
   padding: 5px 0;
 }
 
+.social-bar {
+  text-align: right;
+  padding: 10px 0;
+}
+.social-bar .social-item {
+  transform: skew(-20deg);
+  border: 1px solid;
+  width: 46px;
+  padding: 2px;
+  display: inline-block;
+  height: 40px;
+  position: relative;
+  margin: 0 30px;
+}
+.social-bar .social-item a {
+  transform: skew(20deg);
+  display: inline-block;
+  width: 25px;
+  left: 9px;
+  position: absolute;
+  top: 4px;
+}
+.social-bar .social-item:hover {
+  transform: skew(20deg);
+}
+.social-bar .social-item:hover a {
+  transform: skew(-20deg);
+}
+
 .legal {
   color: #fff;
   font-size: 10px;
@@ -438,6 +502,7 @@ section .section-desc {
 .hide-copy {
   text-indent: -9999999px;
   display: block;
+  color: transparent;
   height: 0;
 }
 
@@ -564,7 +629,7 @@ section .section-desc {
   padding: 5px 10px;
 }
 .site-header .site-nav li:hover, .site-header .site-nav li:active {
-  background: rgba(185, 163, 137, 0.6);
+  background: rgba(56, 56, 56, 0.95);
 }
 .site-header.mobile .logo {
   height: 80%;
@@ -816,6 +881,27 @@ section .section-desc {
   color: #383838;
 }
 
+.bio-page .highlights {
+  width: 200px;
+  float: left;
+  height: 100%;
+  padding: 0 10px;
+}
+.bio-page .highlights ul {
+  margin: 10px 0 0;
+}
+.bio-page .highlights ul > li {
+  margin: 5px 0 0;
+}
+.bio-page .highlights ul > li ul li {
+  margin: 10px 0 0 5px;
+  font-size: 14px;
+}
+.bio-page .bio-copy {
+  width: calc(100% - 200px);
+  float: right;
+}
+
 /*******************************
 
   Footer Styles
@@ -834,6 +920,10 @@ section .section-desc {
   width: 100%;
   opacity: 0.9;
 }
+.site-footer .wrapper a {
+  font-size: 14px;
+  line-height: 26px;
+}
 .site-footer .icon {
   font: 30px fontawesome, sans-serif;
   margin: 10px;
@@ -849,10 +939,13 @@ section .section-desc {
 .site-footer .icon:first-child {
   margin-left: 0;
 }
+.site-footer .social-icons {
+  margin: 20px 0 24px;
+}
 .site-footer .social-item {
   width: 100%;
-  max-width: 50px;
-  height: 40px;
+  max-width: 30px;
+  height: 20px;
   display: inline-block;
 }
 .site-footer .social-item a {
@@ -860,19 +953,17 @@ section .section-desc {
   position: relative;
 }
 .site-footer .social-item svg.icon {
-  height: 30px;
+  height: 20px;
   width: auto;
-  fill: #b9a389;
+  fill: #fff;
+  opacity: 0.8;
   position: absolute;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
-  transform: translateX(-50%);
+}
+.site-footer .social-item:hover svg path {
+  fill: rgba(185, 163, 137, 0.95);
 }
 .site-footer .logo {
-  flex: 0.2;
+  flex: 0.4;
 }
 
 .loader-wrapper {

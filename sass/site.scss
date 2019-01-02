@@ -84,7 +84,13 @@ a {
   }
 }
 
-
+p {
+  img.fr {
+    width: 40%;
+    float: right;
+    padding: 10px 0 10px 10px;
+  }
+}
 
 button {
   border: none;
@@ -175,6 +181,13 @@ section {
   }
 }
 
+.img-wrapper {
+  width: 100%;
+  position: relative;
+  padding-bottom: 40%;
+  overflow: hidden;
+}
+
 .resp-img {
   position: absolute;
   top: 50%;
@@ -188,6 +201,41 @@ section {
   padding: 5px 0;
 }
 
+.social-bar {
+  text-align: right;
+  padding: 10px 0;
+
+  .social-item {
+    transform: skew(-20deg);
+    border: 1px solid;
+    width: 46px;
+    padding: 2px;
+    display: inline-block;
+    height: 40px;
+    position: relative;
+    margin: 0 30px;
+
+    a {
+      transform: skew(20deg);
+      display: inline-block;
+      width: 25px;
+      left: 9px;
+      position: absolute;
+      top: 4px;
+    }
+
+    &:hover {
+      transform: skew(20deg);
+
+      a {
+        transform: skew(-20deg);
+      }
+    }
+
+  }
+
+}
+
 .legal{
   color: #fff;
   font-size: 10px;
@@ -199,6 +247,7 @@ section {
 .hide-copy {
   text-indent: -9999999px;
   display: block;
+  color: transparent;
   height: 0;
 }
 
@@ -348,7 +397,7 @@ section {
 
       &:hover,
       &:active {
-        background: $tan-alpha;
+        background: $font-color-alpha;
       }
     }
   } 
@@ -663,6 +712,35 @@ section {
   }
 }
 
+
+.bio-page {
+  .highlights {
+    width: 200px;
+    float: left;
+    height: 100%;
+    padding: 0 10px;
+
+    ul {
+      margin: 10px 0 0;
+
+      > li {
+        margin: 5px 0 0;
+
+        ul {
+          li {
+            margin: 10px 0 0 5px;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+  .bio-copy {
+    width: calc(100% - 200px);
+    float: right;
+  }
+}
+
 /*******************************
 
   Footer Styles
@@ -682,7 +760,10 @@ section {
       opacity: 0.9;
     }
 
-    
+    a {
+      font-size: 14px;
+      line-height: 26px;
+    }
   }
 
   .icon {
@@ -702,10 +783,14 @@ section {
     }
   }
 
+  .social-icons {
+    margin: 20px 0 24px;
+  }
+
   .social-item {
     width: 100%;
-    max-width: 50px;
-    height: 40px;
+    max-width: 30px;
+    height: 20px;
     display: inline-block;
 
     a {
@@ -714,23 +799,31 @@ section {
     }
 
     svg.icon {
-      height: 30px;
+      height: 20px;
       width: auto;
-      fill: $tan;
+      fill: #fff;
+      opacity: 0.8;
       position: absolute;
-      left: 50%;
-      -webkit-transform: translateX(-50%);
-      -moz-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-      -o-transform: translateX(-50%);
-      transform: translateX(-50%);
+      // left: 50%;
+      // -webkit-transform: translateX(-50%);
+      // -moz-transform: translateX(-50%);
+      // -ms-transform: translateX(-50%);
+      // -o-transform: translateX(-50%);
+      // transform: translateX(-50%);
+    }
+
+    &:hover {
+
+      svg {
+        path {
+          fill: $tan-alpha-2;
+        }
+      }
     }
   }
 
   .logo {
-    flex: 0.2;
-    // height: 100px;
-    // width: 200px; 
+    flex: 0.4;
   }
 }
 
