@@ -335,26 +335,6 @@ a {
 a:hover {
   color: rgba(185, 163, 137, 0.6);
 }
-a.cta {
-  width: 33.3%;
-  max-width: 300px;
-  border: 1px solid #383838;
-  background: transparent;
-  padding: 10px;
-  text-align: center;
-  margin: 40px auto;
-  display: block;
-}
-a.cta:hover {
-  background: rgba(185, 163, 137, 0.6);
-  color: initial;
-}
-a.cta.dark {
-  background: rgba(185, 163, 137, 0.6);
-}
-a.cta.dark:hover {
-  background: transparent;
-}
 
 p img.fr {
   width: 40%;
@@ -371,6 +351,52 @@ button {
 }
 button:first-child {
   margin: 0;
+}
+
+.cta {
+  width: 33.3%;
+  max-width: 300px;
+  border: 1px solid #383838;
+  background: transparent;
+  padding: 10px;
+  text-align: center;
+  margin: 40px auto;
+  display: block;
+}
+.cta:hover {
+  background: rgba(185, 163, 137, 0.6);
+  color: initial;
+}
+.cta.dark {
+  background: rgba(185, 163, 137, 0.6);
+}
+.cta.dark:hover {
+  background: transparent;
+}
+
+blockquote {
+  border: 5px #383838 solid;
+  border-style: solid none;
+}
+blockquote .copy {
+  font-size: 50px;
+  font-style: italic;
+  display: inline-block;
+}
+blockquote cite {
+  font-style: italic;
+}
+blockquote cite:before {
+  content: "~";
+  position: relative;
+  left: -2px;
+  color: #383838;
+}
+blockquote.big-quote {
+  width: 100%;
+  max-width: 450px;
+  margin: 20px auto;
+  padding: 10px 20px 20px;
 }
 
 .play-vid {
@@ -609,6 +635,7 @@ section .section-desc {
   opacity: 0.9;
   position: relative;
   z-index: 600;
+  padding: 0 20px 0 0;
   font-family: "tulpen", arial, sans-serif;
 }
 .site-header .site-nav ul {
@@ -865,20 +892,6 @@ section .section-desc {
 *******************************/
 .photography .section-content {
   align-items: center;
-}
-.photography blockquote .copy {
-  font-size: 50px;
-  font-style: italic;
-  display: inline-block;
-}
-.photography blockquote cite {
-  font-style: italic;
-}
-.photography blockquote cite:before {
-  content: "~";
-  position: relative;
-  left: -2px;
-  color: #383838;
 }
 
 .bio-page .highlights {

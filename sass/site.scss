@@ -58,30 +58,7 @@ a {
   &:hover {
     color: $tan-alpha;
   }
-
-  &.cta {
-    width: 33.3%;
-    max-width: 300px;
-    border: 1px solid #383838;
-    background: transparent;
-    padding: 10px;
-    text-align: center;
-    margin: 40px auto;
-    display: block;
-
-    &:hover{
-      background: $tan-alpha;
-      color: initial;
-    }
-
-    &.dark {
-      background: $tan-alpha;
-
-      &:hover{
-        background: transparent;
-      }
-    }
-  }
+  
 }
 
 p {
@@ -101,6 +78,59 @@ button {
 
   &:first-child {
     margin:0;
+  }
+}
+
+.cta {
+  width: 33.3%;
+  max-width: 300px;
+  border: 1px solid #383838;
+  background: transparent;
+  padding: 10px;
+  text-align: center;
+  margin: 40px auto;
+  display: block;
+
+  &:hover{
+    background: $tan-alpha;
+    color: initial;
+  }
+
+  &.dark {
+    background: $tan-alpha;
+
+    &:hover{
+      background: transparent;
+    }
+  }
+}
+
+blockquote {
+  border: 5px $font-color solid;
+  border-style: solid none;
+  
+  .copy {
+    font-size: 50px;
+    font-style: italic;
+    display: inline-block;
+  }
+
+  cite {
+    font-style: italic;
+
+    &:before {
+      content: "~";
+      position: relative;
+      left: -2px;
+      color: $font-color;
+    }
+  }
+
+  &.big-quote {
+    width: 100%;
+    max-width: 450px;
+    margin: 20px auto;
+    padding: 10px 20px 20px;
   }
 }
 
@@ -374,6 +404,7 @@ section {
     opacity: 0.9;
     position: relative;
     z-index: 600;
+    padding: 0 20px 0 0;
     font-family: 'tulpen', arial, sans-serif;
 
     ul {
@@ -692,24 +723,7 @@ section {
   .section-content {
     align-items: center;
   }
-  blockquote {
-    .copy {
-      font-size: 50px;
-      font-style: italic;
-      display: inline-block;
-    }
-
-    cite {
-      font-style: italic;
-
-      &:before {
-        content: "~";
-        position: relative;
-        left: -2px;
-        color: $font-color;
-      }
-    }
-  }
+  
 }
 
 
