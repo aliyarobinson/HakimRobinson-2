@@ -566,6 +566,9 @@ section .section-desc {
 .site-header .site-nav li:hover, .site-header .site-nav li:active {
   background: rgba(185, 163, 137, 0.6);
 }
+.site-header.mobile .logo {
+  height: 80%;
+}
 .site-header.mobile .menu-btn {
   display: block;
 }
@@ -575,7 +578,7 @@ section .section-desc {
   margin-top: 0;
 }
 .site-header.mobile .menu-btn.active .menu-nav-btn__bar:first-child {
-  transform: translateY(3px) rotate(-100deg);
+  transform: translateY(5px) rotate(-90deg) skew(45deg);
 }
 .site-header.mobile .menu-btn.active .menu-nav-btn__bar:last-child {
   display: none;
@@ -594,10 +597,15 @@ section .section-desc {
 .site-header.mobile .site-nav ul {
   flex-direction: column;
   text-align: center;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
 }
 .site-header.mobile .site-nav ul li {
   width: 80%;
-  margin: 0 auto;
+  margin: 20px auto;
   background: transparent;
 }
 .site-header.mobile .site-nav ul li:hover {
@@ -605,6 +613,8 @@ section .section-desc {
 }
 .site-header.mobile .site-nav ul li a {
   display: block;
+  font-size: 38px;
+  letter-spacing: 3.6px;
 }
 .site-header.small {
   height: 80px;
@@ -669,6 +679,34 @@ section .section-desc {
   max-width: 200px;
   height: 200px;
   border-radius: 50%;
+}
+.latest .video-mod button.close {
+  display: none;
+}
+.latest .video-mod.active {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.9);
+  max-width: none;
+  z-index: 900;
+}
+.latest .video-mod.active .video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.latest .video-mod.active button.close {
+  display: block;
+  font-size: 40px;
+  font-stretch: semi-condensed;
+  color: #b9a389;
+  position: absolute;
+  top: 40px;
+  right: 40px;
 }
 
 /*******************************
@@ -755,6 +793,11 @@ section .section-desc {
   left: -40%;
 }
 
+/*******************************
+
+  Photography Styles
+
+*******************************/
 .photography .section-content {
   align-items: center;
 }
